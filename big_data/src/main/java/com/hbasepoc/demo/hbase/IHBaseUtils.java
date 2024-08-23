@@ -1,4 +1,4 @@
-package HbaseUtils;
+package com.hbasepoc.demo.hbase;
 
 public interface IHBaseUtils {
 
@@ -6,4 +6,5 @@ public interface IHBaseUtils {
     public  byte[] get(String rowKey,String columnFamily, String column)throws  Exception;
     public void scan(String columnFamily,String column) throws  Exception;
     public  void delete(String rowKey,String columnFamily,String column) throws  Exception;
+    public String testQuery();
 }
