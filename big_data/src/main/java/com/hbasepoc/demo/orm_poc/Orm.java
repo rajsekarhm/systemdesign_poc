@@ -28,6 +28,7 @@ public class Orm implements IOrmUtils<MetaData,Connection> {
     public void create(Class<MetaData> entity) throws  Exception {
         StringBuilder query = new StringBuilder("INSERT INTO ");
         Connection con= connection();
+        con.setAutoCommit(false);
         query.append(entity.getSimpleName().toLowerCase()).append("(");
         Field[] fields = entity.getDeclaredFields();
         for(Field _filed:fields){
