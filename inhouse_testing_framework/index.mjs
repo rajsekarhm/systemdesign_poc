@@ -17,10 +17,10 @@ const haste = new hasteMap.default(hasteMapOptions);
 const allFiles = sync("tests/*.js");
 await haste.setupCachePath(hasteMapOptions);
 const { hasteFS } = await haste.build();
-console.log(hasteFS.exists('tests/test4.js'))
-// const testFiles = hasteFS.matchFilesWithGlob(['**/*.js'])
-
-// for await(const testFile of testFiles){
-//   const result = await Promise.all(fs.promises.readFile(testFile,'utf-8'))
-//   console.log(result)
-// }
+// console.log(hasteFS.exists('tests/test4.js'))
+const testFiles = hasteFS.matchFilesWithGlob(['**/*.js'])
+console.log(testFiles)
+for await(const testFile of testFiles){
+  const result = await fs.promises.readFile(testFile,'utf-8')
+  console.log(result)
+}
