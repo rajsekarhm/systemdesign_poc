@@ -5,11 +5,11 @@
 ## Then,
 
 ## Generate private key
+
 ## generate Key.pem :
-###     command => openssl “” —out key.pem
 
-## Create CSR(certificate security request) using private key  request :
-###     command => openssl req -new -key key.pem -out csr.pem
+### command => openssl genpkey -algorithm RSA -out key.pem
 
-## generate ssl certificate from csr and remove csr.pem if not needed :
-##      command => openssl x509 -req -days 365 (expiry) -in csr.pem -signkey key.pem —out cert.pem
+## Create CSR(certificate security request) using private key request and generate ssl certificate from csr and remove csr.pem if not needed :
+
+### command => openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365
