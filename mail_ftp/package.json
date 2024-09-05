@@ -1,0 +1,15 @@
+{
+  "name": "mail_ftp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ftp_poc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.9.15"
+  }
+}
