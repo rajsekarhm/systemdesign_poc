@@ -1,8 +1,8 @@
 const nodeMailer = require("nodemailer");
 
-// proton
+// applicable for proton mail
 // let transporter = nodemailer.createTransport({
-  host: '127.0.0.1', // Use the local SMTP server provided by the Bridge
+// host: '127.0.0.1', // Use the local SMTP server provided by the Bridge
 //   port: 1025,        // Use the port provided by the Bridge
 //   secure: false,     // Use TLS, if available
 //   auth: {
@@ -10,26 +10,28 @@ const nodeMailer = require("nodemailer");
 //     pass: 'your-bridge-password', // The password provided by the Bridge
 //   },
 // });
+
 // google
-// let transporter = nodeMailer.createTransport({
-//   host: "smtp.gmail.com",
-//   service: "gmail",
-//   secure: true,
-//   port: 587,
-//   auth: {
-//     user: process.env.FROM_MAIL_ADDRESS,
-//     pass: process.env.FROM_MAIL_PASSWORD,
-//   },
-// });
+let transporter = nodeMailer.createTransport({
+  host: "smtp.gmail.com",
+  service: "gmail",
+  secure: true,
+  port: 587,
+  auth: {
+    user: process.env.FROM_MAIL_ADDRESS,
+    pass: process.env.FROM_MAIL_PASSWORD,
+  },
+});
 
 export function sentMail(email, content) {
   return new Promise((resolve, reject) => {
     const mailOptions = {
-      from: "support-drawanything <iplrating2018@gmail.com>",
+      from: "",
       to: email,
       subject: "reset account password",
       html: content,
       priority: "high",
+      attachments: [],
     };
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
