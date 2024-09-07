@@ -1,32 +1,21 @@
+const { service } = require("../mailProperties");
 const nodeMailer = require("nodemailer");
-
-// applicable for proton mail
-// let transporter = nodemailer.createTransport({
-// host: '127.0.0.1', // Use the local SMTP server provided by the Bridge
-//   port: 1025,        // Use the port provided by the Bridge
-//   secure: false,     // Use TLS, if available
-//   auth: {
-//     user: 'your-bridge-username', // The username provided by the Bridge
-//     pass: 'your-bridge-password', // The password provided by the Bridge
-//   },
-// });
-
-// google
+const { userMail, password } = service.google;
 let transporter = nodeMailer.createTransport({
   host: "smtp.gmail.com",
   service: "gmail",
   secure: true,
   port: 587,
   auth: {
-    user: process.env.FROM_MAIL_ADDRESS,
-    pass: process.env.FROM_MAIL_PASSWORD,
+    user: userMail,
+    pass: password,
   },
 });
 
 export function sentMail(email, content) {
   return new Promise((resolve, reject) => {
     const mailOptions = {
-      from: "",
+      from: userMail,
       to: email,
       subject: "reset account password",
       html: content,
