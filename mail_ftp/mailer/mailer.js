@@ -71,6 +71,9 @@ const _content = `<!DOCTYPE html>
 </html>
 `;
 
+(async () => {
+  console.log(await sentMail("rajasekar.hm6382@gmail.com", _content));
+})();
 module.exports = {
   sentMail,
 };

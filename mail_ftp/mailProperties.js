@@ -10,7 +10,7 @@ module.exports = {
     },
     testAccount: {
       userMail: "myron.vandervort7@ethereal.email",
-      password: "6sp1NyZdchUgTmbsfb",
+      password: "bsp1NyZdchUgTmbsf6",
       host: "smtp.ethereal.mail",
       port: 587,
       service: "ethereal",
