@@ -1,4 +1,4 @@
-package com.hbasepoc.demo.orm_poc;
+package com.toLearn.sysDesign.orm_poc;
 import java.lang.reflect.Field;
 
 public class MetaData {

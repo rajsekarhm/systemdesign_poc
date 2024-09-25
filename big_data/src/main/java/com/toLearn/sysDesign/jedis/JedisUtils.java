@@ -1,4 +1,4 @@
-package com.hbasepoc.demo.jedis;
+package com.toLearn.sysDesign.jedis;
 
 import redis.clients.jedis.Jedis;
 

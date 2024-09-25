@@ -1,11 +1,7 @@
-package com.hbasepoc.demo;
+package com.toLearn.sysDesign;
 
-import com.hbasepoc.demo.hbase.HBaseUtils;
-import com.hbasepoc.demo.jedis.JedisUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.io.IOException;
 
 @SpringBootApplication
 public class DemoApplication {

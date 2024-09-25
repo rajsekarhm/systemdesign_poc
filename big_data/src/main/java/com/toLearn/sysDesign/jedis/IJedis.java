@@ -1,4 +1,4 @@
-package com.hbasepoc.demo.jedis;
+package com.toLearn.sysDesign.jedis;
 
 public interface IJedis {
     public void set();

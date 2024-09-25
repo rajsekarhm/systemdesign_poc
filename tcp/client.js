@@ -53,7 +53,6 @@ const client = net.createConnection({ port: 12345 }, () => {
 // Receive the server's response
 client.on('data', (data) => {
   console.log('Received from server:', data.toString());
-  
   // Parse JSON if that's what you expect
   const response = JSON.parse(data.toString());
   console.log('Parsed response:', response);
