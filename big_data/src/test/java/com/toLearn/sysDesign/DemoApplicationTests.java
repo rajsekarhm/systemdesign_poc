@@ -1,4 +1,4 @@
-package com.hbasepoc.demo;
+package com.toLearn.sysDesign;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

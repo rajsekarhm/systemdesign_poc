@@ -1,11 +1,9 @@
-package com.hbasepoc.demo.orm_poc;
+package com.toLearn.sysDesign.orm_poc;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Locale;
 
 public class Orm implements IOrmUtils<MetaData,Connection> {
     public  void  console(){

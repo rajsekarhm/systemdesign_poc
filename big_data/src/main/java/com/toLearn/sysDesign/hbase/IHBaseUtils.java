@@ -1,4 +1,4 @@
-package com.hbasepoc.demo.hbase;
+package com.toLearn.sysDesign.hbase;
 
 public interface IHBaseUtils {
 

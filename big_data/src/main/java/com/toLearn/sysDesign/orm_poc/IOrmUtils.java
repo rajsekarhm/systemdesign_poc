@@ -1,4 +1,4 @@
-package com.hbasepoc.demo.orm_poc;
+package com.toLearn.sysDesign.orm_poc;
 
 public interface IOrmUtils<T,X> {
     public  void create(Class<T>entity) throws  Exception;
