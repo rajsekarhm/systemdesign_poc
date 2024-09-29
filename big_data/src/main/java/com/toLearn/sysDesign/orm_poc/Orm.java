@@ -63,7 +63,7 @@ public class Orm implements IOrmUtils<MetaData,Connection> {
     }
 
     @Override
-    public void update(Class<MetaData> entity) throws  Exception {
+    public void updateBy(Class<MetaData> entity) throws  Exception {
 
     }
 
