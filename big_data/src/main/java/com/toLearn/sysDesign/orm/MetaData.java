@@ -1,6 +1,4 @@
-package com.toLearn.sysDesign.orm_poc;
-import java.lang.reflect.Field;
-
+package com.toLearn.sysDesign.orm;
 public class MetaData {
     String assetType;
     long assetId;
@@ -46,5 +44,14 @@ public class MetaData {
 
     public String getWalletAddress() {
         return walletAddress;
+    }
+
+
+    public  static  void main(String [] args) throws Exception {
+       QueryBuilder<MetaData> _query = new QueryBuilder<>();
+       System.out.println(_query.createQueryBuilder(MetaData.class).toString());
+       System.out.println(_query.getByQueryBuilder(MetaData.class,"assetId","x","y","z"));
+       System.out.println(       _query.updateQueryBuilder(MetaData.class,"MetaData","assetId","a","b","c","d"));
+       System.out.println(_query.deleteQueryBuilder(MetaData.class,"assetId"));
     }
 }

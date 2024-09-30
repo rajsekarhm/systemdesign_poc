@@ -1,9 +1,7 @@
-package com.toLearn.sysDesign.orm_poc;
+package com.toLearn.sysDesign.orm;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class Orm implements IOrmUtils<MetaData,Connection> {
     public  void  console(){
@@ -25,8 +23,8 @@ public class Orm implements IOrmUtils<MetaData,Connection> {
     @Override
     public void create(Class<MetaData> entity) throws  Exception {
         StringBuilder query = new StringBuilder("INSERT INTO ");
-        Connection con= connection();
-        con.setAutoCommit(false);
+//        Connection con= connection();
+//        con.setAutoCommit(false);
         query.append(entity.getSimpleName().toLowerCase()).append("(");
         Field[] fields = entity.getDeclaredFields();
         for(Field _filed:fields){
@@ -38,32 +36,42 @@ public class Orm implements IOrmUtils<MetaData,Connection> {
         }
         query.deleteCharAt(query.length() - 1);
         query.append(")");
-        PreparedStatement statement = con.prepareStatement(query.toString());
-        try{
-            for (int i = 0; i < fields.length; i++) {
-                fields[i].setAccessible(true);
-                statement.setObject(i+1,fields[i]);
-            }
-            statement.execute();
-            con.commit();
-        }catch (SQLException error){
-            if(con != null){
-                try {
-                    con.rollback();
-                }catch (SQLException err){
-                    err.printStackTrace();
-                }
-            }
-            error.printStackTrace();
-        }
-        finally {
-            if(statement != null) statement.close();
-            if(con != null) con.close();
-        }
+        System.out.println(query.toString());
+//        PreparedStatement statement = con.prepareStatement(query.toString());
+//        try{
+//            for (int i = 0; i < fields.length; i++) {
+//                fields[i].setAccessible(true);
+//                statement.setObject(i+1,fields[i]);
+//            }
+//            statement.execute();
+//            con.commit();
+//        }catch (SQLException error){
+//            if(con != null){
+//                try {
+//                    con.rollback();
+//                }catch (SQLException err){
+//                    err.printStackTrace();
+//                }
+//            }
+//            error.printStackTrace();
+//        }
+//        finally {
+//            if(statement != null) statement.close();
+//            if(con != null) con.close();
+//        }
     }
 
     @Override
-    public void updateBy(Class<MetaData> entity) throws  Exception {
+    public void updateBy(Class<MetaData> entity, String... args) throws  Exception {
+        // UPDATE metadata SET assetType = ?, walletAddress = ?, isApproved = ?, assetInUsd = ? WHERE assetId = ?;
+        StringBuilder query = new StringBuilder("UPDATE ");
+        query.append(entity.getSimpleName().toLowerCase());
+        query.append(" SET ");
+        for (int i =0 ;i<args.length;i++){
+            query.append(args[i]);
+            query.append(" = ?, ");
+        }
+
 
     }
 
