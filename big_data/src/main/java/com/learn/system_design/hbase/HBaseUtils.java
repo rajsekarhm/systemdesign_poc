@@ -1,4 +1,4 @@
-package com.toLearn.sysDesign.hbase;
+package com.learn.system_design.hbase;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.TableName;

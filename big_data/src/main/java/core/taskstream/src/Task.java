@@ -1,4 +1,4 @@
-package core.taskstream;
+package core.taskstream.src;
 
 public class Task {
     String taskName;
@@ -20,7 +20,7 @@ public class Task {
     }
 
     public  static  void main(String [] args) throws Exception {
-        TaskQueue  _queue = new TaskQueue(2);
+        TaskQueue  _queue = new TaskQueue(new Parallelism(2));
         _queue.addTaskWithoutArgs(new Task("task 1",2000)::task);
         _queue.addTaskWithoutArgs(new Task("task 2",3000)::task);
         _queue.execute();

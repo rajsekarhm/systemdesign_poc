@@ -1,4 +1,4 @@
-package core.taskstream;
+package core.taskstream.src;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -24,7 +24,7 @@ public class Concurrency {
 //        Thread thread2 = new Thread(new Task("Task2",1000));
 //        execute.execute(new Task("Task1",2000));
 //        execute.execute(new Task("Task2",1000));
-
+//
 //        Concurrency con = new Concurrency();
 //        con.console(con::output,"oko");
     }

@@ -1,12 +1,10 @@
-package core.taskstream;
-
+package core.taskstream.src;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Parallelism {
+public class Parallelism implements  IParallelism{
     private ExecutorService executorService;
 
-    // Constructor: You can pass the number of threads to the ExecutorService
     public Parallelism(int numberOfThreads) {
         this.executorService = Executors.newFixedThreadPool(numberOfThreads); // Parallelism with thread pool
     }

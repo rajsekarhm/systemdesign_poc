@@ -1,4 +1,4 @@
-package com.toLearn.sysDesign.orm;
+package com.learn.system_design.orm;
 public class MetaData {
     String assetType;
     long assetId;
