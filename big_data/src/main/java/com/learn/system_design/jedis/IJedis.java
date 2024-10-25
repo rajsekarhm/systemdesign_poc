@@ -1,4 +1,4 @@
-package com.toLearn.sysDesign.jedis;
+package com.learn.system_design.jedis;
 
 public interface IJedis {
     public void set();

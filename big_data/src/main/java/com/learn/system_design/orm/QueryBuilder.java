@@ -1,4 +1,4 @@
-package com.toLearn.sysDesign.orm;
+package com.learn.system_design.orm;
 
 import java.lang.reflect.Field;
 

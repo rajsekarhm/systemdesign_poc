@@ -1,4 +1,4 @@
-package com.toLearn.sysDesign.orm;
+package com.learn.system_design.orm;
 
 public interface IOrmUtils<T,X> {
     public  void create(Class<T>entity) throws  Exception;
