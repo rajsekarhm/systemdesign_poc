@@ -1,4 +1,5 @@
-inhouse_testing_framework/node_modules
+inhouse_runner_framework/node_modules
+inhouse_runner_framework/dist
 ssl/node_modules
 ssl/cert.pem
 ssl/key.pem
